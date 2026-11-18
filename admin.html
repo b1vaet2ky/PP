@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ООО «ПРЕСС Ф5» — разработка ПО, игр, ИТ-консультирование и работа с базами данных в Ярославле">
+  <title>Администратор — ООО «ПРЕСС Ф5»</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__row">
+      <a class="brand" href="index.html" aria-label="ПРЕСС Ф5 — главная">ПРЕСС Ф5</a>
+      <nav class="menu" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="services.html">Услуги</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="admin.html" aria-current="page">Администратор</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Администратор</h1>
+
+    <section class="block" id="login-area">
+      <div class="tile login-box">
+        <h2>Вход</h2>
+        <p class="muted">Демо: admin / admin123</p>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="admin-login">Логин</label>
+            <input id="admin-login" name="login" type="text" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="admin-password">Пароль</label>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <button class="btn" type="submit">Войти</button>
+          <div class="feedback" id="login-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="block" id="admin-panel" hidden>
+      <div class="panel-head">
+        <h2>Заявки</h2>
+        <button id="admin-logout" class="btn btn--ghost" type="button">Выйти</button>
+      </div>
+
+      <div class="filters">
+        <div class="field">
+          <label for="status-filter">Статус</label>
+          <select id="status-filter">
+            <option value="все">Все</option>
+            <option value="новая">Новая</option>
+            <option value="в работе">В работе</option>
+            <option value="закрыта">Закрыта</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="name-search">Поиск по имени клиента</label>
+          <input id="name-search" type="search" placeholder="Введите имя">
+        </div>
+      </div>
+
+      <div class="tablebox">
+        <table>
+          <thead>
+            <tr>
+              <th>№</th><th>Имя</th><th>Контакт</th><th>Описание задачи</th>
+              <th>Дата</th><th>Статус</th><th>Действия</th>
+            </tr>
+          </thead>
+          <tbody id="requests-body"></tbody>
+        </table>
+      </div>
+      <p id="empty-requests" hidden>Заявок пока нет</p>
+      <div id="admin-feedback" class="feedback" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <div class="wrap bottom__row">
+      <p>© 2026 ООО «ПРЕСС Ф5». Учебный демонстрационный сайт.</p>
+      <p>ОГРН 1237600009570 · ИНН 7606137140 · КПП 760601001</p>
+      <p>150033, Ярославская область, г. Ярославль, ул. Блюхера, д. 86/9, кв. 46</p>
+    </div>
+  </footer>
+</body>
+</html>
