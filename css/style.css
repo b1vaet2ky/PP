@@ -1,5 +1,3 @@
-/* Общие стили корпоративного учебного сайта ООО «ПРЕСС Ф5».
-   Цветовая схема: глубокий индиго + бирюзовый акцент. */
 :root {
   --bg: #f2f5fb;
   --ink: #172033;
@@ -33,7 +31,6 @@ a:hover { text-decoration: none; }
 
 .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
 
-/* Шапка */
 .topbar {
   background: linear-gradient(90deg, var(--bar) 0%, var(--bar-soft) 100%);
   color: #fff;
@@ -67,7 +64,6 @@ a:hover { text-decoration: none; }
   border-bottom-color: var(--mint);
 }
 
-/* Основная часть */
 main { flex: 1; padding: 36px 0 62px; }
 
 h1, h2, h3 { line-height: 1.3; margin-top: 0; color: #101a30; }
@@ -79,7 +75,6 @@ p { margin: 0 0 17px; }
 .subtitle { color: var(--muted); font-size: 18px; max-width: 740px; }
 .block { margin-top: 48px; }
 
-/* Баннер */
 .banner {
   display: flex;
   align-items: center;
@@ -94,7 +89,6 @@ p { margin: 0 0 17px; }
 .banner h1 { max-width: 670px; margin-bottom: 18px; }
 .banner .subtitle { margin-bottom: 26px; }
 
-/* Кнопки */
 .btn {
   display: inline-block;
   padding: 11px 20px;
@@ -115,7 +109,6 @@ p { margin: 0 0 17px; }
 .btn--sm { padding: 6px 11px; font-size: 13px; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 
-/* Сетки и карточки */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .cards--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -153,7 +146,6 @@ p { margin: 0 0 17px; }
   margin-bottom: 12px;
 }
 
-/* Информационный блок */
 .notice {
   background: #eaf1ff;
   border: 1px solid #d4e0fa;
@@ -161,14 +153,12 @@ p { margin: 0 0 17px; }
   padding: 21px 24px;
 }
 
-/* Списки и реквизиты */
 .props { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 8px 20px; margin: 0; }
 .props dt { color: var(--muted); }
 .props dd { margin: 0; overflow-wrap: anywhere; }
 .bullets { margin: 0; padding-left: 22px; }
 .bullets li { margin-bottom: 9px; }
 
-/* Формы */
 .split { display: grid; grid-template-columns: 1fr 1.15fr; gap: 20px; align-items: start; }
 .field { margin-bottom: 17px; }
 .field label { display: block; margin-bottom: 6px; font-weight: 600; }
@@ -204,7 +194,6 @@ textarea { min-height: 125px; resize: vertical; }
 }
 .muted { color: var(--muted); }
 
-/* Админ-панель */
 .login-box { max-width: 420px; }
 .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
 .panel-head h2 { margin: 0; }
@@ -241,7 +230,6 @@ td { overflow-wrap: anywhere; }
 .status.work { background: #fff0d2; color: #7a5a12; }
 .status.closed { background: #e0f5ef; color: #166a55; }
 
-/* Подвал */
 .bottom { background: var(--bar); color: #a7b1c9; padding: 24px 0; font-size: 13px; }
 .bottom__row { display: flex; flex-direction: column; gap: 5px; }
 .bottom p { margin: 0; }
@@ -251,7 +239,6 @@ td { overflow-wrap: anywhere; }
 @media (max-width: 650px) {
   .wrap { width: min(100% - 28px, 1120px); }
 
-  /* Шапка: меню вертикальное */
   .topbar__row {
     flex-direction: column;
     align-items: stretch;
@@ -273,7 +260,6 @@ td { overflow-wrap: anywhere; }
     color: var(--mint);
   }
 
-  /* Отступы */
   main { padding-top: 22px; padding-bottom: 40px; }
   .block { margin-top: 32px; }
   .tile { padding: 18px; }
@@ -281,29 +267,24 @@ td { overflow-wrap: anywhere; }
   .banner h1 { font-size: 26px; }
   .subtitle { font-size: 16px; }
 
-  /* Карточки и блоки — в одну колонку */
   .cards,
   .cards--three,
   .split { grid-template-columns: 1fr; }
 
-  /* Реквизиты — в одну колонку */
   .props { grid-template-columns: 1fr; gap: 0; }
   .props dt { font-weight: 600; margin-top: 10px; }
   .props dd { margin-bottom: 6px; }
 
-  /* Поля формы — на всю ширину */
   .field,
   .checkline { width: 100%; }
   input, textarea, select { width: 100%; }
 
-  /* Панель администратора */
   .filters { flex-direction: column; align-items: stretch; gap: 10px; }
   .filters .field { width: 100%; }
   .panel-head { flex-direction: column; align-items: stretch; gap: 10px; }
   .panel-head .btn { width: 100%; }
   .tablebox { border-radius: 8px; }
 
-  /* Кнопки в таблице — на всю ширину строки действий */
   .actions { flex-direction: column; }
   .actions .btn { width: 100%; }
 }
