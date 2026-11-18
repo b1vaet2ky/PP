@@ -1,4 +1,3 @@
-/* Логика учебного сайта «ПРЕСС Ф5». Данные хранятся только в этом браузере. */
 'use strict';
 
 const STORE_REQUESTS = 'pressf5_requests';
@@ -9,14 +8,12 @@ const ADMIN_LOGIN = 'admin';
 const ADMIN_PASSWORD = 'admin123';
 const RESEND_DELAY = 60000;
 
-// Экранирование специальных символов перед вставкой в HTML.
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, ch => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[ch]);
 }
 
-// Чтение массива заявок; повреждённые данные не ломают интерфейс.
 function readRequests() {
   try {
     const data = JSON.parse(localStorage.getItem(STORE_REQUESTS) || '[]');
@@ -37,7 +34,6 @@ function notify(elementId, text, isError = false) {
   node.className = 'feedback ' + (isError ? 'error' : 'success');
 }
 
-// Валидация и сохранение заявки. Серверная отправка не выполняется.
 function submitRequest(event) {
   if (event) event.preventDefault();
   const form = document.getElementById('request-form');
@@ -93,7 +89,6 @@ function submitRequest(event) {
   return false;
 }
 
-// Простейшая учебная авторизация — НЕ защищает данные на реальном сайте.
 function adminLogin(event) {
   if (event) event.preventDefault();
   const login = document.getElementById('admin-login').value.trim();
@@ -130,7 +125,6 @@ function syncAdminView() {
   if (isAdmin()) renderRequests();
 }
 
-// Смена статуса доступна только после входа в текущей вкладке.
 function changeStatus(id, status) {
   if (!isAdmin() || !STATUSES.includes(status)) return;
   const list = readRequests();
@@ -145,7 +139,6 @@ function changeStatus(id, status) {
   }
 }
 
-// Таблица с фильтром по статусу и поиском по имени.
 function renderRequests() {
   if (!isAdmin()) return;
   const tbody = document.getElementById('requests-body');
@@ -202,7 +195,6 @@ function renderRequests() {
   });
 }
 
-// Обработчики навешиваются только на существующих страницах.
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('request-form');
   if (form) form.addEventListener('submit', submitRequest);
